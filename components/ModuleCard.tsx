@@ -13,34 +13,31 @@ const ModuleCard: React.FC<Props> = ({ module }) => {
   return (
     <Link 
       to={`/modulo/${module.id}`}
-      className="group bg-white rounded-[3rem] overflow-hidden border border-gray-100/60 shadow-sm hover:shadow-soft transition-all duration-500 flex flex-col h-full"
+      className="group bg-white rounded-[2.5rem] overflow-hidden border border-neutralBorder/30 shadow-minimal hover:border-rosaCha/30 transition-all duration-700 flex flex-col h-full"
     >
-      <div className="aspect-[16/11] overflow-hidden relative">
-        <div className="absolute inset-0 bg-deepGray/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+      <div className="aspect-[4/3] overflow-hidden relative">
         <img 
           src={module.imageUrl} 
           alt={t(module.title)}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
         />
-        <div className="absolute top-6 left-6 z-20">
-          <div className="px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] uppercase tracking-widest font-black text-rosaCha shadow-sm">
-            Módulo {module.id}
+        <div className="absolute top-6 left-6">
+          <div className="px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[8px] uppercase tracking-[0.3em] font-bold text-softGray border border-neutralBorder/20">
+            0{module.id}
           </div>
         </div>
       </div>
-      <div className="p-10 space-y-4 flex-grow flex flex-col justify-between">
-        <div className="space-y-3">
-          <h3 className="font-serif text-2xl text-deepGray group-hover:text-rosaCha transition-colors leading-tight">
-            {t(module.title)}
-          </h3>
-          <p className="text-softGray text-xs line-clamp-3 font-light leading-relaxed">
-            {t(module.description)}
-          </p>
-        </div>
-        <div className="pt-6 flex items-center gap-3 text-rosaCha font-black text-[10px] uppercase tracking-[0.2em] transition-all group-hover:translate-x-2 duration-300">
-          Continuar trilha
+      <div className="p-10 space-y-5 flex-grow flex flex-col">
+        <h3 className="font-serif text-xl text-deepGray group-hover:text-rosaCha transition-colors leading-snug">
+          {t(module.title)}
+        </h3>
+        <p className="text-softGray text-[11px] font-light leading-relaxed opacity-80 line-clamp-3">
+          {t(module.description)}
+        </p>
+        <div className="mt-auto pt-6 flex items-center gap-2 text-rosaCha text-[9px] uppercase tracking-[0.3em] font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+          Descobrir
           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </div>
       </div>

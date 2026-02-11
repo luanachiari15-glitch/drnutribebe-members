@@ -17,57 +17,54 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-nude">
-      <nav className="bg-white/70 backdrop-blur-xl sticky top-0 z-50 px-6 py-4 border-b border-gray-100/50">
+      <nav className="glass-nav sticky top-0 z-50 px-8 py-5 border-b border-neutralBorder/40">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-rosaCha rounded-2xl flex items-center justify-center text-white font-serif font-bold text-2xl shadow-lg shadow-rosaCha/20 group-hover:rotate-3 transition-transform">N</div>
+          <Link to="/" className="flex items-center gap-3">
             <span className="font-serif text-2xl text-deepGray font-bold tracking-tight">
               Nutri<span className="text-rosaCha">Bebe</span>
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className={`text-xs uppercase tracking-widest font-bold transition-colors ${isActive('/') ? 'text-rosaCha' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.home')}</Link>
-            <Link to="/planejador" className={`text-xs uppercase tracking-widest font-bold transition-colors ${isActive('/planejador') ? 'text-rosaCha' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.planner')}</Link>
-            <Link to="/configuracoes" className={`text-xs uppercase tracking-widest font-bold transition-colors ${isActive('/configuracoes') ? 'text-rosaCha' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.settings')}</Link>
+          <div className="hidden md:flex items-center gap-10">
+            <Link to="/" className={`text-[10px] uppercase tracking-[0.2em] font-medium transition-all ${isActive('/') ? 'text-rosaCha border-b border-rosaCha/30 pb-1' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.home')}</Link>
+            <Link to="/planejador" className={`text-[10px] uppercase tracking-[0.2em] font-medium transition-all ${isActive('/planejador') ? 'text-rosaCha border-b border-rosaCha/30 pb-1' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.planner')}</Link>
+            <Link to="/configuracoes" className={`text-[10px] uppercase tracking-[0.2em] font-medium transition-all ${isActive('/configuracoes') ? 'text-rosaCha border-b border-rosaCha/30 pb-1' : 'text-softGray hover:text-rosaCha'}`}>{t('nav.settings')}</Link>
           </div>
 
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-softGray"
+            className="md:hidden text-softGray p-2"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 8h16M4 16h16"} />
             </svg>
           </button>
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-300">
-            <Link to="/" className={`text-sm font-bold ${isActive('/') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.home')}</Link>
-            <Link to="/planejador" className={`text-sm font-bold ${isActive('/planejador') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.planner')}</Link>
-            <Link to="/configuracoes" className={`text-sm font-bold ${isActive('/configuracoes') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.settings')}</Link>
+          <div className="md:hidden absolute top-full left-0 w-full bg-nude border-b border-neutralBorder/40 p-8 flex flex-col gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
+            <Link to="/" className={`text-xs uppercase tracking-widest font-semibold ${isActive('/') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.home')}</Link>
+            <Link to="/planejador" className={`text-xs uppercase tracking-widest font-semibold ${isActive('/planejador') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.planner')}</Link>
+            <Link to="/configuracoes" className={`text-xs uppercase tracking-widest font-semibold ${isActive('/configuracoes') ? 'text-rosaCha' : 'text-softGray'}`}>{t('nav.settings')}</Link>
           </div>
         )}
       </nav>
 
-      <main className="flex-grow container mx-auto px-6 py-12 max-w-5xl fade-in">
+      <main className="flex-grow container mx-auto px-6 py-16 max-w-6xl fade-in">
         {children}
       </main>
 
-      <footer className="py-20 bg-white/50 border-t border-gray-100 mt-auto">
-        <div className="container mx-auto px-6 text-center space-y-8">
-          <div className="flex justify-center gap-4">
-             <div className="w-2 h-2 rounded-full bg-rosaCha"></div>
-             <div className="w-2 h-2 rounded-full bg-azulBebe"></div>
-             <div className="w-2 h-2 rounded-full bg-amareloPastel"></div>
+      <footer className="py-24 border-t border-neutralBorder/30">
+        <div className="container mx-auto px-6 text-center space-y-6">
+          <div className="flex justify-center gap-6">
+             <div className="w-1 h-1 rounded-full bg-rosaCha/30"></div>
+             <div className="w-1 h-1 rounded-full bg-azulBebe/30"></div>
+             <div className="w-1 h-1 rounded-full bg-amareloPastel/30"></div>
           </div>
-          <div className="space-y-2">
-            <p className="font-serif text-xl text-deepGray font-bold">NutriBebe</p>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-softGray font-bold">
-              © {new Date().getFullYear()} • Introdução Alimentar com Amor
-            </p>
-          </div>
+          <p className="font-serif text-lg text-deepGray tracking-wide">NutriBebe</p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-softGray/60 font-medium">
+            © {new Date().getFullYear()} • Curadoria em Introdução Alimentar
+          </p>
         </div>
       </footer>
     </div>
