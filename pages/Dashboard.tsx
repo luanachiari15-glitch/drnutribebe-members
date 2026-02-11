@@ -10,74 +10,83 @@ import { useLanguage } from '../LanguageContext';
 const Dashboard: React.FC = () => {
   const { t } = useLanguage();
   return (
-    <div className="space-y-16 pb-12">
-      <header className="text-center space-y-4">
-        <h1 className="font-serif text-4xl md:text-5xl text-gray-800">{t('dash.welcome')}</h1>
-        <p className="text-softGray max-w-md mx-auto px-4">
+    <div className="space-y-16 md:space-y-24 pb-12">
+      <header className="text-center space-y-8 max-w-3xl mx-auto px-4">
+        <div className="inline-block px-5 py-2 bg-rosaCha/10 text-rosaCha text-[10px] uppercase tracking-[0.3em] font-bold rounded-full border border-rosaCha/5">
+          Bem-vinda à sua jornada
+        </div>
+        <h1 className="font-serif text-5xl md:text-7xl text-deepGray leading-[1.1] font-black">
+          {t('dash.welcome')}
+        </h1>
+        <p className="text-softGray text-base md:text-xl leading-relaxed font-light">
           {t('dash.subtitle')}
         </p>
       </header>
 
-      {/* Atalho para o Planejador */}
       <section className="px-4">
         <Link 
           to="/planejador"
-          className="max-w-2xl mx-auto flex items-center justify-between p-6 md:p-8 bg-rosaCha/10 border-2 border-rosaCha/20 rounded-[2.5rem] group hover:bg-rosaCha/20 transition-all shadow-sm"
+          className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between p-8 md:p-12 bg-white border border-gray-100 rounded-[3.5rem] group hover:border-rosaCha/30 hover:shadow-soft transition-all duration-700 relative overflow-hidden"
         >
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-rosaCha shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amareloPastel/10 rounded-full blur-3xl -mr-32 -mt-32 transition-all group-hover:bg-amareloPastel/20"></div>
+          
+          <div className="flex items-center gap-8 relative z-10">
+            <div className="w-20 h-20 md:w-24 md:h-24 bg-rosaCha/5 rounded-[2.5rem] flex items-center justify-center text-rosaCha shadow-inner transition-transform group-hover:scale-105 duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <div>
-              <h2 className="font-serif text-xl md:text-2xl text-gray-800">{t('planner.title')}</h2>
-              <p className="text-sm text-rosaCha font-medium">{t('planner.subtitle')}</p>
+            <div className="text-center md:text-left">
+              <h2 className="font-serif text-3xl md:text-4xl text-deepGray">{t('planner.title')}</h2>
+              <p className="text-xs text-rosaCha font-bold tracking-widest uppercase mt-2">{t('planner.subtitle')}</p>
             </div>
           </div>
-          <div className="hidden md:flex w-12 h-12 bg-white rounded-full items-center justify-center text-rosaCha group-hover:scale-110 transition-transform">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          
+          <div className="mt-8 md:mt-0 flex w-16 h-16 bg-rosaCha text-white rounded-full items-center justify-center group-hover:translate-x-3 transition-all duration-500 shadow-xl shadow-rosaCha/20 relative z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </div>
         </Link>
       </section>
 
-      {/* Lista de Módulos */}
-      <section className="space-y-8 px-4">
-        <div className="flex flex-col gap-8 max-w-2xl mx-auto">
+      <section className="px-4 space-y-12">
+        <div className="text-center">
+          <h2 className="font-serif text-4xl text-deepGray mb-4">Trilhas de Conhecimento</h2>
+          <div className="w-16 h-1 bg-rosaCha/20 mx-auto rounded-full"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {MODULES.map((module) => (
             <ModuleCard key={module.id} module={module} />
           ))}
         </div>
       </section>
 
-      {/* Seção de Bônus */}
-      <section className="pt-8 border-t border-gray-200/50">
+      <section className="bg-white/50 py-24 border-y border-gray-100">
         <BonusCarousel />
       </section>
 
-      {/* Seção de Recomendações */}
-      <section className="pt-8 border-t border-gray-200/50">
+      <section className="py-12">
         <RecommendedSection />
       </section>
 
-      {/* Seção de Suporte e Feedback */}
-      <section className="pt-16 pb-8 border-t border-gray-200/50 text-center space-y-6">
-        <div className="max-w-xl mx-auto px-6 py-10 bg-white/40 rounded-[2.5rem] border border-white/60 shadow-sm">
-          <h2 className="font-serif text-2xl md:text-3xl text-gray-800 mb-4">
-            {t('dash.feedback.title')}
-          </h2>
-          <p className="text-sm text-softGray mb-8 leading-relaxed">
-            {t('dash.feedback.text')}
-          </p>
-          <a 
-            href="mailto:drnutribebe@gmail.com" 
-            className="inline-flex items-center gap-2 px-8 py-3 bg-azulBebe text-white font-semibold rounded-2xl hover:bg-azulBebe/90 transition-all shadow-md active:scale-95"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      <section className="px-6 pb-12">
+        <div className="max-w-3xl mx-auto px-10 py-16 bg-azulBebe/5 rounded-[4rem] border border-azulBebe/10 text-center space-y-10">
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto shadow-soft ring-8 ring-azulBebe/5">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-azulBebe" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
+          </div>
+          <div className="space-y-4">
+            <h2 className="font-serif text-4xl text-deepGray">{t('dash.feedback.title')}</h2>
+            <p className="text-softGray text-base max-w-lg mx-auto leading-relaxed font-light">
+              {t('dash.feedback.text')}
+            </p>
+          </div>
+          <a 
+            href="mailto:suporte@nutribebe.com" 
+            className="inline-flex items-center gap-4 px-12 py-5 bg-azulBebe text-white font-bold rounded-3xl hover:bg-azulBebeDark transition-all shadow-xl shadow-azulBebe/20 active:scale-95 text-lg"
+          >
             {t('dash.feedback.button')}
           </a>
         </div>

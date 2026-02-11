@@ -79,7 +79,7 @@ const translations: Record<Language, Record<string, string>> = {
     'meal.intro.l3.blw': 'Quartiers de Chayote et Panais fondants',
     'meal.intro.l3.mixed': 'Purée de Chayote avec morceaux de Panais',
     'meal.intro.l4.traditional': 'Soupe lisse de Petits Pois et Pommes de Terre',
-    'meal.intro.l4.blw': 'Petits Pois entiers écrasés et bâtonnets de Pommes de Terre',
+    'meal.intro.l4.blw': 'Petits Pois entiers écrasés et bâtonnets de PDT',
     'meal.intro.l4.mixed': 'Soupe de Petits Pois avec dés de Pommes de Terre',
     'meal.intro.l5.traditional': 'Purée lisse de Courgettes et Bœuf haché',
     'meal.intro.l5.blw': 'Rondelles de Courgettes et Bœuf en lanières tendres',
@@ -92,15 +92,13 @@ const translations: Record<Language, Record<string, string>> = {
     'meal.intro.l7.mixed': 'Purée de Brocoli avec Jaune d\'œuf émietté',
 
     'meal.intro.s1.traditional': 'Purée de Papaye mixée',
-    'meal.intro.s1.blw': 'Tranche de Papaye fondante (sans pépins)',
+    'meal.intro.s1.blw': 'Tranche de Papaye fondante',
     'meal.intro.s1.mixed': 'Papaye grossièrement écrasée',
     'meal.intro.s2.traditional': 'Purée de Banane mixée',
-    'meal.intro.s2.blw': 'Banane entière épluchée (très mûre)',
+    'meal.intro.s2.blw': 'Banane entière épluchée',
     'meal.intro.s2.mixed': 'Banane écrasée à la fourchette',
-    'meal.intro.s3.traditional': 'Purée d\'Avocat mixé',
-    'meal.intro.s3.blw': 'Quartiers d\'Avocat fondant',
-    'meal.intro.s3.mixed': 'Écrasé d\'Avocat',
 
+    // Ingredients
     'ing.potiron': 'Potiron',
     'ing.poulet': 'Blanc de Poulet',
     'ing.patateDouce': 'Patate Douce',
@@ -163,6 +161,7 @@ const translations: Record<Language, Record<string, string>> = {
     'ing.limon': 'Citron Sicilien',
     'ing.couve': 'Chou Vert',
     'ing.oignon': 'Oignon',
+    'ing.melon': 'Melon',
 
     'module.1.title': 'Le grand départ : Quand commencer ?',
     'module.1.desc': 'Comprenez pourquoi attendre 6 mois et comment préparer les premiers repas en toute sécurité.',
@@ -180,7 +179,6 @@ const translations: Record<Language, Record<string, string>> = {
     'module.7.desc': 'Sel, sucre, miel et aliments étouffants : tout ce qu\'il faut garder hors de portée.',
     'module.8.title': 'Composer une assiette équilibrée',
     'module.8.desc': 'La règle du tiers : vitamines, fer et énergie dans chaque repas.',
-    
     'bonus.1.title': 'Guide visuels introduction alimentaire',
     'bonus.2.title': 'Introduction alimentaire du bebe + Recettes',
     'bonus.3.title': 'Planner de menus pratiques pour bébé – Introduction alimentaire',
@@ -270,7 +268,28 @@ const translations: Record<Language, Record<string, string>> = {
     'meal.intro.s3.traditional': 'Purê de Abacate batido',
     'meal.intro.s3.blw': 'Fatia de Abacate maduro',
     'meal.intro.s3.mixed': 'Abacate amassado',
+    'meal.intro.s4.traditional': 'Purê de Pera cozida',
+    'meal.intro.s4.blw': 'Pera cozida em fatias macias',
+    'meal.intro.s4.mixed': 'Pera cozida amassada',
+    'meal.intro.s5.traditional': 'Purê de Manga madura',
+    'meal.intro.s5.blw': 'Fatia grande de Manga para segurar',
+    'meal.intro.s5.mixed': 'Manga em cubinhos macios',
+    'meal.intro.s6.traditional': 'Purê de Maçã cozida',
+    'meal.intro.s6.blw': 'Maçã cozida no vapor (fatias)',
+    'meal.intro.s6.mixed': 'Maçã cozida amassada',
+    'meal.intro.s7.traditional': 'Purê de Melão batido',
+    'meal.intro.s7.blw': 'Fatia de Melão bem maduro',
+    'meal.intro.s7.mixed': 'Melão amassado',
 
+    // --- REFEIÇÕES DESENVOLVIMENTO (9-11m) ---
+    'meal.dev.l1.traditional': 'Arroz, Feijão e Carne moída amadinhos',
+    'meal.dev.l1.blw': 'Bolinhos de Arroz, Feijão e Iscas de Carne',
+    'meal.dev.l1.mixed': 'Pratinho de Arroz, Feijão e Carne moída',
+    'meal.dev.d3.traditional': 'Canja Amassada: Arroz, Frango e Legumes',
+    'meal.dev.d3.blw': 'Coxinha de Frango, Arroz e Legumes inteiros',
+    'meal.dev.d3.mixed': 'Canja espessa com pedaços de Frango e Arroz',
+
+    // Ingredients
     'ing.potiron': 'Abóbora',
     'ing.poulet': 'Frango',
     'ing.patateDouce': 'Batata Doce',
@@ -333,6 +352,7 @@ const translations: Record<Language, Record<string, string>> = {
     'ing.limon': 'Limão',
     'ing.couve': 'Couve',
     'ing.oignon': 'Cebola',
+    'ing.melon': 'Melão',
 
     'module.1.title': 'O Início de Tudo: Quando Começar?',
     'module.1.desc': 'Entenda a importância dos 6 meses e como preparar o ambiente para as primeiras colheradas.',
@@ -350,7 +370,6 @@ const translations: Record<Language, Record<string, string>> = {
     'module.7.desc': 'Sal, açúcar, mel, sucos e ultraprocessados. Saiba o porquê de evitá-los agora.',
     'module.8.title': 'Montando o Prato Perfeito',
     'module.8.desc': 'Equilíbrio entre grupos alimentares: cores, ferro e energia em cada refeição.',
-    
     'bonus.1.title': 'Guia visual de introdução alimentar',
     'bonus.2.title': 'Introdução alimentar do bebê + Receitas',
     'bonus.3.title': 'Planner de menus práticos para o bebê – Introdução alimentar',
@@ -476,6 +495,7 @@ const translations: Record<Language, Record<string, string>> = {
     'ing.limon': 'Lemon',
     'ing.couve': 'Cabbage',
     'ing.oignon': 'Onion',
+    'ing.melon': 'Melon',
 
     'module.1.title': 'The Great Start: When to Begin?',
     'module.1.desc': 'Understand why 6 months is the golden rule and how to prepare for the first bite.',
@@ -493,7 +513,6 @@ const translations: Record<Language, Record<string, string>> = {
     'module.7.desc': 'Salt, sugar, honey, juice, and choking hazards. Know why to avoid them now.',
     'module.8.title': 'Building the Perfect Plate',
     'module.8.desc': 'The rule of thirds: vitamins, iron, and energy in every single meal.',
-    
     'bonus.1.title': 'Visual Guide to Complementary Feeding',
     'bonus.2.title': 'Complementary Feeding + Recipes',
     'bonus.3.title': 'Practical Baby Meal Planner – Starting Solids',
