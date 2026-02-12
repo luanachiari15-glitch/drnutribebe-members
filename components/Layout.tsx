@@ -63,7 +63,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
           <p className="font-serif text-lg text-deepGray tracking-wide">NutriBebe</p>
           <p className="text-[9px] uppercase tracking-[0.4em] text-softGray/60 font-medium">
-            © {new Date().getFullYear()} • Curadoria em Introdução Alimentar
+            © {new Date().getFullYear()} • {t('footer.curation')}
           </p>
         </div>
       </footer>

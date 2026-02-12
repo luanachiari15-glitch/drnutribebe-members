@@ -16,6 +16,7 @@ export interface Bonus {
 
 export interface RecommendedProduct {
   id: string;
+  title: string;
   imageUrl: string;
   link: string;
 }

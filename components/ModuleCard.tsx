@@ -35,7 +35,7 @@ const ModuleCard: React.FC<Props> = ({ module }) => {
           {t(module.description)}
         </p>
         <div className="mt-auto pt-6 flex items-center gap-2 text-rosaCha text-[9px] uppercase tracking-[0.3em] font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-          Descobrir
+          {t('module.discover')}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
